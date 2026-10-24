@@ -6,106 +6,91 @@
 /*   By: ytaoufik <ytaoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 18:54:20 by ytaoufik          #+#    #+#             */
-/*   Updated: 2026/10/21 22:32:11 by ytaoufik         ###   ########.fr       */
+/*   Updated: 2026/10/24 23:59:41 by ytaoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 
-static	size_t	count(char const *s, char c)
+static size_t count_words(char const *s, char c)
 {
-	size_t	countt;
-	size_t	i;
+	size_t  i;
+	size_t count ; 
 	
-	countt = 0;
 	i = 0;
-	while (s[i])
+	count = 0;
+	while(s[i])
 	{
-		while(s[i] && s[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
-		if(s[i] && s[i] != c)
-			countt++;
+		if (s[i] && s[i] != c)
+			count++;
 		while (s[i] && s[i] != c)
 			i++;
 	}
-	return (countt); 
+	return (count);
 }
 
-static char	*cpy(char const *s, char c, size_t start )
+static char *cpy(char const *s,char c ,size_t start)
 {
 	size_t i;
-	size_t len;
 
 	i = start;
 	while (s[i] && s[i] != c)
 		i++;
-	len = i - start;
-	
-	return(ft_substr(s, start, len));
+	return(ft_substr(s, start, i - start));
 }
 
-static void freesplit(char **s, size_t j)
+static void freesplit(char **big_str, size_t j)
 {
-	size_t f;
-	
-	f = 0;
-	while (f < j)
+	size_t i;
+
+	i = 0;
+	while (i < j)
 	{
-		free(s[f]);
-		f++;
+		free(big_str[i]);
+		i++;
 	}
-	free(s);
+	free(big_str);
 }
 
-char	**ft_split(char const *s, char c)
+static char **fill_words(char **big_str, char const *s, char c, size_t len_bigstr)
 {
-	char **big_str;
-	size_t	biglen;
 	size_t i;
 	size_t j;
 
 	i = 0;
 	j = 0;
-	biglen = count(s, c);
-	big_str = malloc((biglen + 1) * sizeof(char *));
-	if (!big_str)	
-		return (NULL);
-	while (j < biglen)
+	while (j < len_bigstr)
 	{
 		while (s[i] && s[i] == c)
 			i++;
-		big_str[j] = cpy(s,c,i);
+		big_str[j] = cpy(s, c, i);
 		if (!big_str[j])
 		{
-			freesplit(big_str,j);
-			return(NULL);
-		}
+			freesplit(big_str, j);
+			return (NULL);
+		}	
 		while (s[i] && s[i] != c)
 			i++;
 		j++;
 	}
-	big_str[j] = NULL;
 	return (big_str);
 }
-#include <stdio.h>
-#include <stdlib.h>
 
-int	main(void)
+char **ft_split(char const *s, char c)
 {
-	char	**result;
-	int		i;
+	size_t len_bigstr;
+	char **big_str;
 
-	result = ft_split("hello,dsg,dsf,dsf,sf", ',');
-	if (!result)
-		return (1);
-	i = 0;
-	while (result[i])
-	{
-		printf("%s\n", result[i]);
-		free(result[i]);
-		i++;
-	}
-	free(result);
-	return (0);
+	len_bigstr = count_words(s, c);
+	big_str = malloc(sizeof(char *) * (len_bigstr + 1));
+	if (!big_str)
+		return (NULL);
+	big_str = fill_words(big_str, s, c, len_bigstr);
+	if (!big_str)
+		return(NULL);
+	big_str[len_bigstr] = NULL;
+	return (big_str);
 }
