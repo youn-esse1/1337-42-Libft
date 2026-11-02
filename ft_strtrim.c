@@ -6,7 +6,7 @@
 /*   By: ytaoufik <ytaoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 22:20:07 by ytaoufik          #+#    #+#             */
-/*   Updated: 2026/10/20 18:15:38 by ytaoufik         ###   ########.fr       */
+/*   Updated: 2026/11/01 23:50:08 by ytaoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (start < end && exist_set(s1[end -1], set))
 		end--;
-	len = end - start ;
+	len = end - start;
 	cpy_s1 = malloc(len + 1);
 	if (!cpy_s1)
 		return (NULL);

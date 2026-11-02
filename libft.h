@@ -6,7 +6,7 @@
 /*   By: ytaoufik <ytaoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 00:01:09 by ytaoufik          #+#    #+#             */
-/*   Updated: 2026/10/31 19:09:01 by ytaoufik         ###   ########.fr       */
+/*   Updated: 2026/11/02 15:45:16 by ytaoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
-#include <stdio.h> 
+# include <limits.h>
 
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);

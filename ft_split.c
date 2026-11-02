@@ -6,21 +6,20 @@
 /*   By: ytaoufik <ytaoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 18:54:20 by ytaoufik          #+#    #+#             */
-/*   Updated: 2026/10/24 23:59:41 by ytaoufik         ###   ########.fr       */
+/*   Updated: 2026/11/01 23:55:36 by ytaoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-static size_t count_words(char const *s, char c)
+static	size_t	count_words(char const *s, char c)
 {
-	size_t  i;
-	size_t count ; 
-	
+	size_t	i;
+	size_t	count;
+
 	i = 0;
 	count = 0;
-	while(s[i])
+	while (s[i])
 	{
 		while (s[i] && s[i] == c)
 			i++;
@@ -32,19 +31,19 @@ static size_t count_words(char const *s, char c)
 	return (count);
 }
 
-static char *cpy(char const *s,char c ,size_t start)
+static	char	*cpy(char const *s, char c, size_t start)
 {
-	size_t i;
+	size_t	i;
 
 	i = start;
 	while (s[i] && s[i] != c)
 		i++;
-	return(ft_substr(s, start, i - start));
+	return (ft_substr(s, start, i - start));
 }
 
-static void freesplit(char **big_str, size_t j)
+static	void	freesplit(char **big_str, size_t j)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < j)
@@ -55,10 +54,11 @@ static void freesplit(char **big_str, size_t j)
 	free(big_str);
 }
 
-static char **fill_words(char **big_str, char const *s, char c, size_t len_bigstr)
+static	char	**fill_words(char **big_str, char const *s,
+	char c, size_t len_bigstr)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
@@ -71,7 +71,7 @@ static char **fill_words(char **big_str, char const *s, char c, size_t len_bigst
 		{
 			freesplit(big_str, j);
 			return (NULL);
-		}	
+		}
 		while (s[i] && s[i] != c)
 			i++;
 		j++;
@@ -79,10 +79,10 @@ static char **fill_words(char **big_str, char const *s, char c, size_t len_bigst
 	return (big_str);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	size_t len_bigstr;
-	char **big_str;
+	size_t	len_bigstr;
+	char	**big_str;
 
 	len_bigstr = count_words(s, c);
 	big_str = malloc(sizeof(char *) * (len_bigstr + 1));
@@ -90,7 +90,7 @@ char **ft_split(char const *s, char c)
 		return (NULL);
 	big_str = fill_words(big_str, s, c, len_bigstr);
 	if (!big_str)
-		return(NULL);
+		return (NULL);
 	big_str[len_bigstr] = NULL;
 	return (big_str);
 }

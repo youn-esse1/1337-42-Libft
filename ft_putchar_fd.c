@@ -6,13 +6,13 @@
 /*   By: ytaoufik <ytaoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 22:30:40 by ytaoufik          #+#    #+#             */
-/*   Updated: 2026/10/26 00:43:23 by ytaoufik         ###   ########.fr       */
+/*   Updated: 2026/11/02 12:39:04 by ytaoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-    write(fd, &c, 1);
+	write(fd, &c, 1);
 }

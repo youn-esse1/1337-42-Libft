@@ -6,13 +6,13 @@
 /*   By: ytaoufik <ytaoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 21:27:38 by ytaoufik          #+#    #+#             */
-/*   Updated: 2026/10/17 22:47:43 by ytaoufik         ###   ########.fr       */
+/*   Updated: 2026/11/02 13:41:56 by ytaoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		c += 32;

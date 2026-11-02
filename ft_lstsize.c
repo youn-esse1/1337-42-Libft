@@ -6,25 +6,25 @@
 /*   By: ytaoufik <ytaoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 17:19:44 by ytaoufik          #+#    #+#             */
-/*   Updated: 2026/10/30 18:30:08 by ytaoufik         ###   ########.fr       */
+/*   Updated: 2026/11/02 13:27:40 by ytaoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int ft_lstsize(t_list *lst)
+unsigned	int	ft_lstsize(t_list *lst)
 {
-    unsigned int    count;
-    t_list  *currentnode;
+	unsigned int	count;
+	t_list			*currentnode;
 
-    currentnode = lst;
-    count = 0;
-    while (currentnode)
-    {
-        count++;
-        currentnode = currentnode->next;
-    }
-    return (count);
+	currentnode = lst;
+	count = 0;
+	while (currentnode)
+	{
+		count++;
+		currentnode = currentnode->next;
+	}
+	return (count);
 }
 
 // int main()

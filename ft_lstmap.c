@@ -6,7 +6,7 @@
 /*   By: ytaoufik <ytaoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 21:38:56 by ytaoufik          #+#    #+#             */
-/*   Updated: 2026/10/31 19:02:02 by ytaoufik         ###   ########.fr       */
+/*   Updated: 2026/11/02 13:43:12 by ytaoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*ww_node;
 	void	*fcontent;
 
+	result = NULL;
 	if (!(lst && del && f))
 		return (NULL);
 	while (lst)

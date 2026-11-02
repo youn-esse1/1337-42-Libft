@@ -6,7 +6,7 @@
 /*   By: ytaoufik <ytaoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 18:58:49 by ytaoufik          #+#    #+#             */
-/*   Updated: 2026/10/17 22:47:21 by ytaoufik         ###   ########.fr       */
+/*   Updated: 2026/11/01 19:46:53 by ytaoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t i;
-	
+	size_t	i;
+
 	i = 0;
 	if (dstsize > 0)
 	{

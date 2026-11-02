@@ -6,7 +6,7 @@
 /*   By: ytaoufik <ytaoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 21:52:41 by ytaoufik          #+#    #+#             */
-/*   Updated: 2026/10/17 22:47:38 by ytaoufik         ###   ########.fr       */
+/*   Updated: 2026/11/01 20:10:11 by ytaoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t i;
+	size_t	i;
 
 	i = ft_strlen(s);
 	while (i > 0 && s[i] != (char)c)

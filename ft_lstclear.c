@@ -6,7 +6,7 @@
 /*   By: ytaoufik <ytaoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 19:58:36 by ytaoufik          #+#    #+#             */
-/*   Updated: 2026/10/31 13:23:32 by ytaoufik         ###   ########.fr       */
+/*   Updated: 2026/11/02 13:29:01 by ytaoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*clrcurrent;
 
 	if (!lst || !*lst || !del)
-		return;
+		return ;
 	current = *lst;
 	while (current)
 	{

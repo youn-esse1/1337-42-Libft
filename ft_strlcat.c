@@ -6,7 +6,7 @@
 /*   By: ytaoufik <ytaoufik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 19:41:43 by ytaoufik          #+#    #+#             */
-/*   Updated: 2026/10/17 22:47:15 by ytaoufik         ###   ########.fr       */
+/*   Updated: 2026/11/01 19:48:19 by ytaoufik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t i;
-	size_t j;
-	size_t lendst;
+	size_t	i;
+	size_t	j;
+	size_t	lendst;
 
 	i = 0;
 	while (i < dstsize && dst[i])
