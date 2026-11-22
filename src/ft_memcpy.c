@@ -1,0 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ytaoufik <ytaoufik@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/14 22:43:36 by ytaoufik          #+#    #+#             */
+/*   Updated: 2026/11/22 21:50:11 by ytaoufik         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../header/libft.h"
+
+void	*ft_memcpy(void *dst, const void *src, size_t n)
+{
+	const unsigned char	*s;
+	unsigned char		*d;
+	size_t				i;
+
+	if ((dst == src) || (n == 0))
+		return (dst);
+	s = (const unsigned char *)src;
+	d = (unsigned char *)dst;
+	i = 0;
+	while (i < n)
+	{
+		d[i] = s[i];
+		i++;
+	}
+	return (dst);
+}
